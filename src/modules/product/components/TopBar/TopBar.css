@@ -1,0 +1,89 @@
+.topband {
+  background: var(--blue);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px 64px 22px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand .name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 28px;
+  color: white;
+  letter-spacing: 0.2px;
+}
+
+.brand .dots {
+  display: flex;
+  gap: 5px;
+}
+
+.brand .dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.brand .dots span:nth-child(1) {
+  background: var(--yellow);
+}
+
+.brand .dots span:nth-child(2) {
+  background: var(--coral);
+}
+
+.brand .dots span:nth-child(3) {
+  background: oklch(80% 0.13 175);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav a {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: oklch(92% 0.03 250);
+  padding: 9px 18px;
+  border-radius: 999px;
+}
+
+.nav a.active {
+  color: var(--blue-deep);
+  background: white;
+}
+
+.icon-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.wave {
+  display: block;
+  width: 100%;
+  height: 44px;
+}

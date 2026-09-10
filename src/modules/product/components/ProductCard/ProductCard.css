@@ -1,0 +1,141 @@
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 22px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--blue-light);
+  transition: transform 0.2s ease;
+}
+
+.media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card:hover .media {
+  transform: translateY(-4px) rotate(-0.5deg);
+}
+
+.tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: white;
+  background: var(--coral);
+  font-size: 12px;
+  letter-spacing: 0.2px;
+  padding: 6px 13px;
+  border-radius: 999px;
+}
+
+.tag.out {
+  background: var(--ink);
+}
+
+.quick-add {
+  position: absolute;
+  right: 16px;
+  bottom: -22px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: white;
+  box-shadow: 0 10px 20px oklch(40% 0.15 255 / 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--blue);
+  transition: transform 0.15s ease;
+}
+
+.card:hover .quick-add {
+  transform: scale(1.08);
+}
+
+.info {
+  margin-top: 26px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.info .name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink);
+  line-height: 1.35;
+}
+
+.info .price {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--blue-deep);
+  white-space: nowrap;
+}
+
+.stock-note {
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--coral-deep);
+}
+
+.stock-note.muted {
+  color: var(--ink-soft);
+  font-weight: 600;
+}
+
+.card.soldout .media {
+  filter: saturate(0.35);
+  opacity: 0.65;
+}
+
+.card.soldout .price {
+  color: var(--ink-soft);
+  text-decoration: line-through;
+}
+
+.placeholder-tile {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.placeholder-tile .mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--blue);
+}
+
+.placeholder-tile .label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--blue-deep);
+}

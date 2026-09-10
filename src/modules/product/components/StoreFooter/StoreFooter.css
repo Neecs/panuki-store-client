@@ -1,0 +1,32 @@
+.footer {
+  background: var(--blue);
+  padding: 34px 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.footer .name {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  color: white;
+}
+
+.footer-links {
+  display: flex;
+  gap: 26px;
+}
+
+.footer-links a {
+  color: oklch(92% 0.03 250);
+}
+
+.footer .copy {
+  color: oklch(85% 0.04 250);
+}

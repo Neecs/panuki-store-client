@@ -1,0 +1,23 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.status {
+  padding: 80px 64px;
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 15px;
+}
+
+.status button {
+  margin-top: 16px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+}

@@ -1,0 +1,52 @@
+.intro {
+  padding: 46px 64px 28px;
+}
+
+.eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--blue-deep);
+  background: var(--blue-light);
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.eyebrow-row .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--coral);
+}
+
+.eyebrow-row .dot:last-child {
+  background: var(--yellow-deep);
+}
+
+.intro h1 {
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 1.1;
+  margin: 0 0 14px;
+  color: var(--ink);
+  max-width: 640px;
+}
+
+.intro h1 .pop {
+  color: var(--blue);
+}
+
+.intro .count {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}

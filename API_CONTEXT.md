@@ -1,6 +1,6 @@
 # Panuki Store — API Context (para el frontend)
 
-Backend: NestJS + PostgreSQL (TypeORM). Base URL en dev: `http://localhost:8080` (o el valor de `PORT` en `.env`; `main.ts` cae a 3000 si no está seteado).
+Backend: NestJS + PostgreSQL (TypeORM). Base URL en dev: `http://localhost:8080` (o el valor de `PORT` en `.env`; `main.ts` cae a 3000 si no está seteado). Todas las rutas tienen el prefijo global `/api` (ej. `http://localhost:8080/api/product`).
 
 ⚠️ **CORS no está habilitado en el backend.** Si el front corre en otro origen (otro puerto/dominio), hay que agregar `app.enableCors(...)` en `src/main.ts` antes de poder consumir la API desde el navegador.
 
@@ -14,13 +14,13 @@ Los DTOs de request tienen `whitelist: true` + `forbidNonWhitelisted: true` (Val
 
 ## Auth (JWT)
 
-- **Login:** `POST /auth/login` — público.
+- **Login:** `POST /api/auth/login` — público.
   - Request (`LoginDto`): `{ email: string, password: string }`
   - Response 200 (`LoginResponseDto`): `{ accessToken: string }`
   - 401 si las credenciales son inválidas.
 - **Uso del token:** en rutas protegidas, header `Authorization: Bearer <accessToken>`.
 - El token no tiene refresh — expira a los `JWT_EXPIRES_IN` segundos (default 3600) y hay que loguear de nuevo.
-- **Crear admin:** `POST /user` — público, pero solo funciona una vez (la segunda llamada tira `409 Conflict`). No hay UI para esto, se llama a mano una sola vez tras el deploy.
+- **Crear admin:** `POST /api/user` — público, pero solo funciona una vez (la segunda llamada tira `409 Conflict`). No hay UI para esto, se llama a mano una sola vez tras el deploy.
   - Request (`CreateUserDto`): `{ email: string, password: string (min 8, max 255) }`
   - Response (`UserResponseDto`): `{ id: string, email: string }`
 
@@ -34,12 +34,12 @@ Todas las rutas de lectura son públicas. Crear/editar/borrar requieren `Authori
 
 | Método | Ruta | Auth | Body | Notas |
 |---|---|---|---|---|
-| GET | `/product` | No | — | Devuelve `ProductResponseDto[]` |
-| GET | `/product/:id` | No | — | 404 si no existe |
-| GET | `/product/:id/image` | No | — | Devuelve `{ imageUrl: string }`, 404 si no tiene imagen |
-| POST | `/product` | Sí | `multipart/form-data` | Campos del DTO + archivo opcional en el campo `image` |
-| PATCH | `/product/:id` | Sí | `multipart/form-data` | Todos los campos opcionales, mismo campo `image` |
-| DELETE | `/product/:id` | Sí | — | Soft delete, devuelve `{ message, id }` |
+| GET | `/api/product` | No | — | Devuelve `ProductResponseDto[]` |
+| GET | `/api/product/:id` | No | — | 404 si no existe |
+| GET | `/api/product/:id/image` | No | — | Devuelve `{ imageUrl: string }`, 404 si no tiene imagen |
+| POST | `/api/product` | Sí | `multipart/form-data` | Campos del DTO + archivo opcional en el campo `image` |
+| PATCH | `/api/product/:id` | Sí | `multipart/form-data` | Todos los campos opcionales, mismo campo `image` |
+| DELETE | `/api/product/:id` | Sí | — | Soft delete, devuelve `{ message, id }` |
 
 **`ProductResponseDto`** (respuesta de GET/POST/PATCH):
 ```ts

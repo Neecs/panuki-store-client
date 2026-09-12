@@ -1,0 +1,40 @@
+.header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.header-row h1 {
+  font-size: 22px;
+}
+
+.new-btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: none;
+  background: var(--blue);
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.status {
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.status button {
+  margin-top: 12px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--ink);
+}

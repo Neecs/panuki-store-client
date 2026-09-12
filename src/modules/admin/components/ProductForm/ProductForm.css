@@ -1,0 +1,108 @@
+.form {
+  max-width: 520px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.field input,
+.field textarea {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--border);
+  font-family: inherit;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: 2px solid var(--blue);
+  outline-offset: 1px;
+}
+
+.field .hint {
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+.field .field-error {
+  font-size: 12px;
+  color: var(--coral-deep);
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+}
+
+.row .field {
+  flex: 1;
+}
+
+.preview {
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--blue-light);
+  margin-bottom: 8px;
+}
+
+.preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-error {
+  color: var(--coral-deep);
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.actions button {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.actions .save {
+  border: none;
+  background: var(--blue);
+  color: white;
+}
+
+.actions .save:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.actions .cancel {
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+}

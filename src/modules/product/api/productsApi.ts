@@ -1,12 +1,26 @@
+import { API_BASE_URL } from '../../../shared/api/config'
 import type { Product } from '../types'
 
-const BASE_URL = import.meta.env.VITE_API_BASE_URL ?? '/api'
+type RawProduct = Omit<Product, 'price'> & { price: string | number }
+
+export function normalizeProduct(raw: RawProduct): Product {
+  return { ...raw, price: Number(raw.price) }
+}
 
 export async function fetchProducts(): Promise<Product[]> {
-  const res = await fetch(`${BASE_URL}/product`)
+  const res = await fetch(`${API_BASE_URL}/product`)
   if (!res.ok) {
     throw new Error(`Failed to load products (${res.status})`)
   }
-  const raw: Array<Omit<Product, 'price'> & { price: string | number }> = await res.json()
-  return raw.map((product) => ({ ...product, price: Number(product.price) }))
+  const raw: RawProduct[] = await res.json()
+  return raw.map(normalizeProduct)
+}
+
+export async function fetchProduct(id: string): Promise<Product> {
+  const res = await fetch(`${API_BASE_URL}/product/${id}`)
+  if (!res.ok) {
+    throw new Error(`Failed to load product (${res.status})`)
+  }
+  const raw: RawProduct = await res.json()
+  return normalizeProduct(raw)
 }

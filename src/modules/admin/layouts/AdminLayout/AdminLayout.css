@@ -1,0 +1,64 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+.brand .tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--blue-deep);
+  background: var(--blue-light);
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.email {
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.actions a,
+.actions button {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.content {
+  flex: 1;
+  padding: 32px;
+}

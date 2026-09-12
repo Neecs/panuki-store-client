@@ -14,9 +14,9 @@ const inquiryLink = buildWhatsAppLink(
         <span class="dots"><span></span><span></span><span></span></span>
       </div>
       <nav class="nav">
-        <a href="#" class="active">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+        <a href="#" class="active">Tienda</a>
+        <a href="#">Nosotros</a>
+        <a href="#">Contacto</a>
       </nav>
       <a
         class="icon-btn"

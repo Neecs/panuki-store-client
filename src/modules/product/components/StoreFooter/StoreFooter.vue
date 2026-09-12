@@ -4,9 +4,9 @@
   <footer class="footer">
     <span class="name">Panuki</span>
     <div class="footer-links">
-      <a href="#">Shipping</a>
-      <a href="#">Returns</a>
-      <a href="#">Contact</a>
+      <a href="#">Envíos</a>
+      <a href="#">Devoluciones</a>
+      <a href="#">Contacto</a>
     </div>
     <span class="copy">&copy; 2026 Panuki Store</span>
   </footer>

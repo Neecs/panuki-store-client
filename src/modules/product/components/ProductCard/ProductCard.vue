@@ -18,15 +18,17 @@ const whatsAppLink = computed(() =>
 
 <template>
   <article class="card" :class="{ soldout: status === 'out' }">
-    <div class="media">
-      <img v-if="product.imageUrl" :src="product.imageUrl" :alt="product.name" />
-      <div v-else class="placeholder-tile">
-        <span class="mark">P</span>
-        <span class="label">Foto pr&oacute;ximamente</span>
-      </div>
+    <div class="media-wrap">
+      <div class="media">
+        <img v-if="product.imageUrl" :src="product.imageUrl" :alt="product.name" />
+        <div v-else class="placeholder-tile">
+          <span class="mark">P</span>
+          <span class="label">Foto pr&oacute;ximamente</span>
+        </div>
 
-      <span v-if="status === 'low'" class="tag">Solo quedan {{ product.stock }}!</span>
-      <span v-else-if="status === 'out'" class="tag out">Agotado</span>
+        <span v-if="status === 'low'" class="tag">Solo quedan {{ product.stock }}!</span>
+        <span v-else-if="status === 'out'" class="tag out">Agotado</span>
+      </div>
 
       <a
         v-if="status !== 'out'"

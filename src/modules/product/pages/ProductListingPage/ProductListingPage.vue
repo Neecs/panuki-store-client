@@ -18,7 +18,7 @@ const { products, isLoading, error, refetch } = useProducts()
       <button type="button" @click="refetch">Reintentar</button>
     </div>
     <template v-else>
-      <ProductListIntro :count="products.length" />
+      <ProductListIntro />
       <ProductGrid :products="products" />
     </template>
 

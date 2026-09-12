@@ -3,6 +3,15 @@
   flex-direction: column;
 }
 
+.media-wrap {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .media-wrap {
+  transform: translateY(-4px) rotate(-0.5deg);
+}
+
 .media {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -12,17 +21,12 @@
   align-items: center;
   justify-content: center;
   background: var(--blue-light);
-  transition: transform 0.2s ease;
 }
 
 .media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-.card:hover .media {
-  transform: translateY(-4px) rotate(-0.5deg);
 }
 
 .tag {
@@ -46,7 +50,8 @@
 .quick-add {
   position: absolute;
   right: 16px;
-  bottom: -22px;
+  bottom: 16px;
+  z-index: 1;
   width: 44px;
   height: 44px;
   border-radius: 999px;
@@ -64,7 +69,7 @@
 }
 
 .info {
-  margin-top: 26px;
+  margin-top: 16px;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;

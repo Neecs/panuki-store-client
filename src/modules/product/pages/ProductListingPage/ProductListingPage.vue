@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useProducts } from '../../composables/useProducts'
 import TopBar from '../../components/TopBar/TopBar.vue'
-import ProductListIntro from '../../components/ProductListIntro/ProductListIntro.vue'
 import ProductGrid from '../../components/ProductGrid/ProductGrid.vue'
 import StoreFooter from '../../components/StoreFooter/StoreFooter.vue'
 
@@ -17,10 +16,7 @@ const { products, isLoading, error, refetch } = useProducts()
       <p>{{ error }}</p>
       <button type="button" @click="refetch">Reintentar</button>
     </div>
-    <template v-else>
-      <ProductListIntro />
-      <ProductGrid :products="products" />
-    </template>
+    <ProductGrid v-else :products="products" />
 
     <StoreFooter />
   </div>
